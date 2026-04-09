@@ -13,8 +13,8 @@ var ball;
 	//Instantiate the Player
 	player = new GameObject(20,canvas.height/2, 20, 100, "red");
     ball = new GameObject(canvas.width/2, canvas.height/2, 50, 20, "blue");
-    ball.vx = 5;
-    ball.vy = 5;
+    ball.vx = -5;
+    ball.vy = 0;
 
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
@@ -63,6 +63,8 @@ function animate()
     {
         ball.x = 500
         ball.y = 400
+
+        
     }
     if(ball.x + ball.height/2 > canvas.width)
     {
@@ -71,6 +73,13 @@ function animate()
    
     if(ball.hitTestObject(player))
     {
+        if(ball.y < player.y - player.height/3){
+            ball.vy = -5;
+        }
+        if(ball.y > player.y + player.height/6){
+            ball.vy = 5;
+        }
+
         ball.vx = -ball.vx;
     }
 

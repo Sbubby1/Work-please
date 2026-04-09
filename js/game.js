@@ -25,23 +25,23 @@ function animate()
     player.vy = 0;
     if(w)
     {
-        player.vy = -2;
+        player.vy = -4;
     }
     if(s)
     {
-        player.vy = 2;
+        player.vy = 4;
     }
 
     player.y += player.vy;
 
     //check for collision with top and bottom of canvas
-    if(player.y < 0)
+    if(player.y - player.height/2 < 0)
     {
-        player.y = 0;
+        player.y = player.height/2;
     }
-    if(player.y + player.height > canvas.height)
+    if(player.y + player.height/2 > canvas.height)
     {
-        player.y = canvas.height - player.height;
+        player.y = canvas.height - player.height/2;
     }
 }
 

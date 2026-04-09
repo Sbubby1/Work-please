@@ -21,16 +21,18 @@ function animate()
     //draw paddle
     player.drawRect();
 
-    // if(w)
-    // {
-    //     player.vy = -2;
-    // }
-    // if(s)
-    // {
-    //     player.vy = 2;
-    // }
+    // Reset vertical velocity each frame; set from input if keys are pressed
+    player.vy = 0;
+    if(w)
+    {
+        player.vy = -2;
+    }
+    if(s)
+    {
+        player.vy = 2;
+    }
 
-    // player.y += player.vy;
+    player.y += player.vy;
 
     //check for collision with top and bottom of canvas
     if(player.y < 0)

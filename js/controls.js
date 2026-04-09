@@ -45,4 +45,12 @@ function release(e)
 	{
 		d = false;
 	}
+	if(e.keyCode == 87)
+	{
+		w = false;
+	}
+	if(e.keyCode == 83)
+	{
+		s = false;
+	}	
 }

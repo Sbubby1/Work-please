@@ -61,7 +61,8 @@ function animate()
     }
     if(ball.x - ball.height/2 < 0)
     {
-        ball.vx = -ball.vx;
+        ball.x = 500
+        ball.y = 400
     }
     if(ball.x + ball.height/2 > canvas.width)
     {

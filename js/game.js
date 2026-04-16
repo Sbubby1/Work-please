@@ -26,9 +26,22 @@ var p2wins = 0;
 	timer = setInterval(animate, interval);
 function animate()
 {
-    context.font = "20px Arial";
+    
     //Erase the Screen
     context.clearRect(0,0,canvas.width, canvas.height);
+    //Draw the middle line
+    context.save();
+
+    context.strokeStyle = "orange";
+
+    context.beginPath();
+    context.moveTo(canvas.width/2, 0);
+    context.lineTo(canvas.width/2, canvas.height);
+    context.closePath();
+    context.lineWidth = 5;
+    context.stroke();
+    context.restore();
+    context.font = "20px Arial";
     //draw paddle
     player.drawRect();
     player2.drawRect();

@@ -46,9 +46,9 @@ function animate()
     player.drawRect();
     player2.drawRect();
 
-     context.fillText("Player 1 | Player 2", 400, 100);
-    context.fillText(p1wins, 460, 125);
-    context.fillText("    -  " + p2wins, 460, 125);
+     context.fillText("      Player 1 | Player 2", 400, 100);
+    context.fillText(p1wins, 488, 125);
+    context.fillText("    -  " + p2wins, 488, 125);
     // Reset vertical velocity each frame; set from input if keys are pressed
     player.vy = 0;
     if(w)

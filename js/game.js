@@ -5,6 +5,11 @@ var timer;
 var interval = 1000/60;
 var player;
 var ball;
+var p1wins = 0;
+var p2wins = 0;
+
+
+   
 
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
@@ -21,12 +26,16 @@ var ball;
 	timer = setInterval(animate, interval);
 function animate()
 {
+    context.font = "20px Arial";
     //Erase the Screen
     context.clearRect(0,0,canvas.width, canvas.height);
     //draw paddle
     player.drawRect();
     player2.drawRect();
 
+     context.fillText("Player 1 | Player 2", 400, 100);
+    context.fillText(p1wins, 460, 125);
+    context.fillText("    -  " + p2wins, 460, 125);
     // Reset vertical velocity each frame; set from input if keys are pressed
     player.vy = 0;
     if(w)
@@ -84,14 +93,16 @@ function animate()
         ball.x = 500
         ball.y = 400
 
-        
+        p2wins++;
+        console.log("Player 2 Wins: " + p2wins);
     }
      if(ball.x + ball.height/2 > canvas.width)
     {
         ball.x = 500
         ball.y = 400
 
-        
+        p1wins++;
+        console.log("Player 1 Wins: " + p1wins);
     }
     if(ball.x + ball.height/2 > canvas.width)
     {

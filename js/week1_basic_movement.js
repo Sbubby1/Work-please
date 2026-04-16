@@ -12,7 +12,7 @@ var player;
 	context = canvas.getContext("2d");	
 	
 	//Instantiate the Player
-	player = new Player();
+	
 	player.vx = 10;
 	player.vy = 10;
 	

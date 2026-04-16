@@ -3,10 +3,15 @@ var a = false;
 var d = false;
 var w = false;
 var s = false;
-
+var w2 = false;
+var s2 = false;
 //Add Event Listeners
 document.addEventListener("keydown", press);
 document.addEventListener("keyup", release);
+document.addEventListener("arrowup", press);
+document.addEventListener("arrowdown", press);
+document.addEventListener("arrowup", release);
+document.addEventListener("arrowdown", release);
 
 //Event Functions
 function press(e)
@@ -30,6 +35,13 @@ function press(e)
 	{
 		s = true;
 	}	
+	if(e.keyCode == 38)	{
+		w2 = true;
+	}
+	if(e.keyCode == 40)
+	{
+		s2 = true;
+	}
 }
 
 function release(e)
@@ -52,5 +64,12 @@ function release(e)
 	if(e.keyCode == 83)
 	{
 		s = false;
+	}	
+	if(e.keyCode == 38)	{
+		w2 = false;
+	}
+	if(e.keyCode == 40)
+	{
+		s2 = false;
 	}	
 }

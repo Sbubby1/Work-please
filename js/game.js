@@ -9,6 +9,7 @@ var p1wins = 0;
 var p2wins = 0;
 
 
+
    
 
 	//Set Up the Canvas
@@ -22,11 +23,14 @@ var p2wins = 0;
     ball.vx = -5;
     ball.vy = 0;
 
+   
+
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
 function animate()
 {
     
+
     //Erase the Screen
     context.clearRect(0,0,canvas.width, canvas.height);
     //Draw the middle line
